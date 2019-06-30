@@ -3,11 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
+title: Levi的博客
+subtitle: 路漫漫其修远兮
+description: 材料狗转行CV学习中
+keywords: "CV,程序猿,编程"
+author: Levi Liu
+email: judasta520@gmail.com
 language:
 timezone:
 
@@ -73,7 +74,25 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: yilia
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+
+sitemap:
+    path: sitemap.xml
+    template: ./sitemap_template.xml
+
+baidusitemap:
+path: baidusitemap.xml
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -81,3 +100,22 @@ deploy:
   type: git
   repo: https://github.com/GeorgeJu95/georgeju95.github.io.git
   branch: master
+
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
