@@ -1,12 +1,12 @@
 ---
-title: Hexo+Github建站的一点总结
+title: Hexo+Github建立个人博客的一点总结
 date: 2019-06-30 19:03:00
 tags: Hexo
+reward: true
 ---
 
-
 ## 一、环境准备
-
+<!-- more -->
 以Mac Os系统为例：
 ### 1、安装nodejs（去官网下载LTS版本）和 git
 确保安装成功 node -v 和 npm -v 测试一下
@@ -14,7 +14,6 @@ tags: Hexo
 ``` bash
 $ sudo do
 ```
-<!-- more -->
 ### 3、npm安装cnpm(针对国内用户，淘宝有镜像站)
 ``` bash
 $ npm install -g cnpm --registry=https://registry.npm.taobao.org
@@ -94,10 +93,12 @@ $ hexo s
 ``` bash
 $ hexo d 
 ```
-对整个流程较为熟悉后，可以参考下面的第三条链接，备份与恢复
-使用SSH连接Github参考第四条链接
-
-
+对整个流程较为熟悉后：
+* <mark>备份与恢复</mark>——参考下面第三条链接
+* <mark>使用SSH连接Github</mark>——参考第四条链接
+* <mark>添加Valine评论系统</mark>——参考第五条链接
+* <mark>给文章增加目录(博客增加相册功能也可参考该博主的文章)</mark>——参考第六条链接
+* <mark>Hexo与Mathjax的冲突及解决方案</mark>——参考第七条链接
 ---
 
 
@@ -107,6 +108,9 @@ $ hexo d
 2. http://dongshuyan.com/2016/04/07/%E6%80%8E%E4%B9%88%E5%86%99%E5%8D%9A%E5%AE%A2/
 3. https://meetes.top/2018/03/01/Hexo%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D/
 4. https://help.github.com/en/articles/connecting-to-github-with-ssh
+5. https://blog.xxwhite.com/2017/Valine.html
+6. http://lawlite.me/2017/04/17/Hexo-yilia%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E5%92%8C%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91/
+7. https://segmentfault.com/a/1190000007261752
 
 
 
