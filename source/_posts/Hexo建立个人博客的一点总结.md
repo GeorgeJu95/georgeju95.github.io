@@ -6,10 +6,10 @@ reward: true
 ---
 
 ## 一、环境准备
-<!-- more -->
 以Mac Os系统为例：
 ### 1、安装nodejs（去官网下载LTS版本）和 git
 确保安装成功 node -v 和 npm -v 测试一下
+<!-- more -->
 ### 2、终端进入管理员模式 
 ``` bash
 $ sudo do
