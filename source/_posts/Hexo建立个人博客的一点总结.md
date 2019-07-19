@@ -12,7 +12,7 @@ reward: true
 <!-- more -->
 ### 2、终端进入管理员模式 
 ``` bash
-$ sudo do
+$ sudo su
 ```
 ### 3、npm安装cnpm(针对国内用户，淘宝有镜像站)
 ``` bash
