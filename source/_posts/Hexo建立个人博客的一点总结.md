@@ -99,6 +99,7 @@ $ hexo d
 * <mark>添加Valine评论系统</mark>——参考第五条链接
 * <mark>给文章增加目录(博客增加相册功能也可参考该博主的文章)</mark>——参考第六条链接
 * <mark>Hexo与Mathjax的冲突及解决方案</mark>——参考第七条链接
+* <mark>关于备份其他主题到远程仓库是灰色文件夹的解决办法</mark>——参考第八条链接
 ---
 
 
@@ -111,6 +112,7 @@ $ hexo d
 5. https://blog.xxwhite.com/2017/Valine.html
 6. http://lawlite.me/2017/04/17/Hexo-yilia%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E5%92%8C%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91/
 7. https://segmentfault.com/a/1190000007261752
+8. https://swibinchter.github.io/2017/01/11/Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E6%96%87%E4%BB%B6%E5%A4%B9%E6%97%A0%E6%B3%95%E5%AE%8C%E6%95%B4push%E5%8F%8Aclone/
 
 
 
