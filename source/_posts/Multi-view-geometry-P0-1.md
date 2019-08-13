@@ -1,6 +1,6 @@
 ---
 title: 计算机视觉中的多视角几何：第0篇 基础知识：射影几何、变换和估计(第2章)
-date: 2019-07-08 10:30:00
+date: 2019-07-19 10:30:00
 categories: 
 toc: true
 tags: [多视角几何第二版,翻译,计算机视觉]
@@ -12,13 +12,13 @@ tags: [多视角几何第二版,翻译,计算机视觉]
 
 <!-- more -->
 
-第1章引入二维空间（以下简称2D）的射影变换。这些变换发生在用透视摄像机对平面摄像的时候。该章偏重于入门介绍并为三维空间（以下简称3D）几何铺路。大多数的概念在2D中比3D中更容易理解和可视化。本章介绍**射影变换**，包括它的特殊情况：<u>仿射和相似变换</u>；并把注意力主要集中在从透视图像中恢复**仿射性质**（例如平行线）和**度量性质**（例如线之间的角度）。
+第2章引入二维空间（以下简称2D）的射影变换。这些变换发生在用透视摄像机对平面摄像的时候。该章偏重于入门介绍并为三维空间（以下简称3D）几何铺路。大多数的概念在2D中比3D中更容易理解和可视化。本章介绍**射影变换**，包括它的特殊情况：<u>仿射和相似变换</u>；并把注意力主要集中在从透视图像中恢复**仿射性质**（例如平行线）和**度量性质**（例如线之间的角度）。
 
-第2章覆盖3D射影几何。该几何的推导方式与2D非常相似，当然，由于维数的增加出现了新的性质。这里主要的新几何是**无穷远平面**和**绝对二次曲线**。
+第3章覆盖3D射影几何。该几何的推导方式与2D非常相似，当然，由于维数的增加出现了新的性质。这里主要的新几何是**无穷远平面**和**绝对二次曲线**。
 
-第3章介绍**由图像测量进行几何估计**，这是本书的主要论题之一。我们以用点对应来估计射影变换为例来说明估计算法的要素和目的，这些算法将在整本书中被采用。其中重要的问题是：<u>一个代价函数应该最小化什么</u>，比如是代数的或是几何的或是统计的测量，该问题将长篇地加以介绍。本章还打算介绍鲁棒估计的思想，以及这样的技术在变换的自动估计中的应用。
+第4章介绍**由图像测量进行几何估计**，这是本书的主要论题之一。我们以用点对应来估计射影变换为例来说明估计算法的要素和目的，这些算法将在整本书中被采用。其中重要的问题是：<u>一个代价函数应该最小化什么</u>，比如是代数的或是几何的或是统计的测量，该问题将长篇地加以介绍。本章还打算介绍鲁棒估计的思想，以及这样的技术在变换的自动估计中的应用。
 
-第4章介绍如何评价估计算法的结果。特别是如何计算估计的协方差。
+第5章介绍如何评价估计算法的结果。特别是如何计算估计的协方差。
 
 # 第2章  2D射影几何和变换
 
@@ -92,7 +92,7 @@ tags: [多视角几何第二版,翻译,计算机视觉]
 
 当$x3 \neq 0$时，齐次矢量$\mathbf x=(x1, x2, x3)^\intercal$对应于$\mathbb R^2$中的有限点。我们可以把最后坐标为$x3=0$的点加入$\mathbb R^2$。所扩展的空间是所有齐次3维矢量的集合，称为射影空间$\mathbb P^2$。最后坐标为$x3=0$的点被称为**理想点**，或无穷远点。所有理想点的集合可以写成$(x1, x2, 0)^\intercal$，并由比率$x1:x2$指定一个具体的点。注意该集合在一条直线上，称为**无穷远线**，用矢量$\mathbf l_\infty = (0, 0, 1)^\intercal$表示。我们可以验证$(0, 0, 1)(x1, x2, 0)^\intercal=0$.
 
-由结论2.2，我们推出直线$\mathbf l=(a, b, c)^\intercal$与$\mathbf l_\infty$交于理想点$(b, -a, 0)^\intercal$（因为$(b, -a, 0)\mathbf l=0$）。任何一条与$\mathbf l$平行的直线$\mathbf l'=(a, b, c')^\intercal$也交$\mathbf l_\infty$于同样的理想点$(b, -a, 0)^\intercal$，与$c'$的取值无关。在非齐次表示下，$(b, -a)^\intercal$是与该直线相切的矢量，与该直线的法线$(a, b)^\intercal$相正交，因而它代表该直线的**方向**。当直线的方向改变时，理想点$(b, -a, 0)^\intercal$沿$\mathbf l_\infty$而变化。基于这些理由，无穷远线可以看作是平面上所有直线方向的集合。
+由结论2.2，我们推出直线$\mathbf l=(a, b, c)^\intercal$与$\mathbf l_\infty$交于理想点$(b, -a, 0)^\intercal$（因为$(b, -a, 0)\mathbf l=0$）。任何一条与$\mathbf l$平行的直线$\mathbf l'=(a, b, c')^\intercal$也交$\mathbf l_\infty$于同样的理想点$(b, -a, 0)^\intercal$，与$c'$的取值无关。在非齐次表示下，$(b, -a)^\intercal$是与该直线相切的矢量，与该直线的法线$(a, b)$相正交，因而它代表该直线的**方向**。当直线的方向改变时，理想点$(b, -a, 0)^\intercal$沿$\mathbf l_\infty$而变化。基于这些理由，无穷远线可以看作是平面上所有直线方向的集合。
 
 注意引入无穷远点概念后点与直线相交的概念得到了简化。在射影平面$\mathbb P^2$中，我们可以不加思索地说任意两条相异直线都相交于一点而任意两个相异的点都在一条直线上，但在标准欧式几何$\mathbb R^2$中却不成立，其中平行线就构成一个特例。
 
@@ -100,7 +100,7 @@ tags: [多视角几何第二版,翻译,计算机视觉]
 
 #### 射影平面的模型
 
-一种有益的方法是把$\mathbb P^2$看作$\mathbb R^3$中一种射线的集合。该集合的所有矢量$k(x1, x2, x3)^\intercal$当k变化时形成过原点的射线。这样的一条射线可以看作是$\mathbb P^2$中的一个点。在此模型中，$\mathbb P^2$中的直线是过原点的平面。可以验证两相异的射线共处于一张平面上，而任何两张相异平面相交于一 条射线。这类似于两个相异的点唯一确定一条直线，而两条相异的直线总相交于一点。
+一种有益的方法是把$\mathbb P^2$看作$\mathbb R^3$中一种射线的集合。该集合的所有矢量$k(x1, x2, x3)^\intercal$当k变化时形成过原点的射线。这样的一条射线可以看作是$\mathbb P^2$中的一个点。在此模型中，$\mathbb P^2$中的直线是过原点的平面。可以验证两相异的射线共处于一张平面上，而任何两张相异平面相交于一条射线。这类似于两个相异的点唯一确定一条直线，而两条相异的直线总相交于一点。
 
 点和线可以用平面$x3=1$与这些射线和平面集相交得到。如图2.1所示，表示理想点的射线和表示$\mathbf l_\infty$的平面都与平面$x3=1$平行.
 
@@ -122,37 +122,37 @@ tags: [多视角几何第二版,翻译,计算机视觉]
 
 ### 2.2.3 二次曲线与对偶二次曲线
 
-二次曲线由平面上的二阶方程描述. 在欧氏几何中，二次曲线有三种主要类型: 双曲线，椭圆和抛物线(后面将定义的所谓的退化二次曲线除外)，在经典理论中，这三类曲线是不同方向 的平面与圆锥相交所产生的截线(退化的二次曲线由过锥顶的平面产生). 但是我们将了解到，在2D射影几何中所有非退化的二次曲线在射影变换下都等价.
+二次曲线由平面上的二阶方程描述. 在欧氏几何中，二次曲线有三种主要类型: 双曲线，椭圆和抛物线(后面将定义的所谓的退化二次曲线除外)，在经典理论中，这三类曲线是不同方向的平面与圆锥相交所产生的截线(退化的二次曲线由过锥顶的平面产生). 但是我们将了解到，在2D射影几何中所有非退化的二次曲线在射影变换下都等价.
 
-在非齐欢坐标中，二次曲线的方程是$$ax^2+bxy+cy^2+dx+ey+f=0$$对应于一个二阶多项式. 通过替代$x \mapsto x_1/x_3, y \mapsto x_2/x_3$，"齐次化"得到$$\begin{equation} ax_1^2+bx_1x_2+cx_2^2+dx_1x_3+ex_2x_3+fx_3^2=0 \tag{2.1} \end{equation}$$
+在非齐次坐标中，二次曲线的方程是$$ax^2+bxy+cy^2+dx+ey+f=0$$对应于一个二阶多项式. 通过替代$x \mapsto x_1/x_3, y \mapsto x_2/x_3$，"齐次化"得到$$\begin{equation} ax_1^2+bx_1x_2+cx_2^2+dx_1x_3+ex_2x_3+fx_3^2=0 \tag{2.1} \end{equation}$$
 
 或表示成矩阵形式$$\mathbf x^\intercal \mathbf C \mathbf x = 0 \tag{2.2}$$
 
 其中二次曲线系数矩阵$\mathbf C$为$$\mathbf C = \begin{bmatrix} a & b/2 & d/2 \\\\ b/2 & c & e/2 \\\\ d/2 & e/2 & f \end{bmatrix} \tag{2.3}$$
 
-注意二次曲线的系数矩阵是对称的. 它与点和线的齐次表达式一样，重要的仅仅是矩阵元素的比率，因为用一个非零标盘乘$\mathbf C$不会影响上面的方程. 因此，$\mathbf C$是一条二次曲线的齐次表示. 二次曲线有五个自由度，可以视为比率$\left| a : b : c : d : e : f \right|$或等价地视为对称矩阵六个元萦减去一个比例因子.
+注意二次曲线的系数矩阵是对称的. 它与点和线的齐次表达式一样，重要的仅仅是矩阵元素的比率，因为用一个非零标盘乘$\mathbf C$不会影响上面的方程. 因此，$\mathbf C$是一条二次曲线的齐次表示. 二次曲线有五个自由度，可以视为比率$\left| a : b : c : d : e : f \right|$或等价地视为对称矩阵六个元素减去一个比例因子.
 
 #### 五点定义一条二次曲线
 
 假定我们希望计算过点集$\mathbf x_i$的二次曲线，在二次曲线被唯一确定之前，我们可以指定多少个点? 我们打算用一个确定二次曲线的算法来构造性地回答这个问题. 根据(2.1)可知，每一点$\mathbf x_i$给二次系数提供一个约束，因为如果二次曲线过$(x_i, y_i)^\intercal$，便有$$ax_i^2+b_ix_iy_i+cy_i^2+dx_i+ey_i+f=0$$
 
-该约束可以重写为$$(\ x_i^2\quad x_iy_i\quad y_i^2\quad x_i\quad y_i\quad \mathbf l \ ) \  \mathbf c = 0$$其中$\mathbf c = ( a , b , c , d , e , f)^\intercal$是把二次曲线 $\mathbf C$表示成一个6维矢量.
+该约束可以重写为$$(\ x_i^2\quad x_iy_i\quad y_i^2\quad x_i\quad y_i\quad 1 \ ) \  \mathbf c = 0$$其中$\mathbf c = ( a , b , c , d , e , f)^\intercal$是把二次曲线 $\mathbf C$表示成一个6维矢量.
 
-把五点提供的约束堆积起来，得到$$\begin{bmatrix} x_1^2 & x_1y_1 & y_1^2 & x_1 & y_1 & \mathbf l \\\\ x_2^2 & x_2y_2 & y_2^2 & x_2 & y_2 & \mathbf l \\\\ x_3^2 & x_3y_3 & y_3^2 & x_3 & y_3 & \mathbf l \\\\ x_4^2 & x_4y_4 & y_4^2 & x_4 & y_4 & \mathbf l \\\\ x_5^2 & x_5y_5 & y_5^2 & x_5 & y_5 & \mathbf l \end{bmatrix} \mathbf c = 0 \tag{2.4}$$
+把五点提供的约束堆积起来，得到$$\begin{bmatrix} x_1^2 & x_1y_1 & y_1^2 & x_1 & y_1 & 1 \\\\ x_2^2 & x_2y_2 & y_2^2 & x_2 & y_2 & 1 \\\\ x_3^2 & x_3y_3 & y_3^2 & x_3 & y_3 & 1 \\\\ x_4^2 & x_4y_4 & y_4^2 & x_4 & y_4 & 1 \\\\ x_5^2 & x_5y_5 & y_5^2 & x_5 & y_5 & 1 \end{bmatrix} \mathbf c = 0 \tag{2.4}$$
 
 因而二次曲线是这个$5\times6$矩阵的零矢量. 它表明一条二次曲线由一般位置的五个点唯一确定(相差一个尺度因子)。这种通过求零空间来拟合一个几何实体(或关系)的方法今后将经常在本书介绍计算的章节中采用.
 
 #### 二次曲线的切线
 
-二次曲线的切线在齐次坐标下，过二次曲线上点$\mathbf x$的切线$\mathbf l$有特别简单的形式：
+在齐次坐标下，过二次曲线上点$\mathbf x$的切线$\mathbf l$有特别简单的形式：
 
 ##### 结论2.7  过（非退化）二次曲线$\mathrm C$上点$\mathbf x$的切线$\mathbf l$由$\mathbf l = \mathrm C \mathbf x$确定.
 
-**证明**  因为$\mathbf l^\intercal \mathbf x = \mathbf x^\intercal \mathrm C \mathbf x = 0$, 所以直线$\mathbf l = \mathrm C \mathbf x$过$\mathbf x$. 如果$\mathbf l$仅与二次曲线交于一点，那么它就是切线，我们的证明也就完成了. 否则，假定$\mathbf l$与该二次曲线还交于另一点$\mathbf y$，则有$\mathbf y^\intercal \mathrm C \mathbf y = 0$和$\mathbf x^\intercal \mathrm C \mathbf y =\mathbf l^\intercal \mathbf y = 0$. 由此推出$(x+ay)^\intercal \mathrm C (x+ay)=0$对所有$a$成立，这表明连接$\mathbf x$和$\mathbf y$的整条直线$\mathbf l = \mathrm C \mathbf x$在该二次曲线$\mathrm C$上，因而C是退化的（见下文）.
+**证明**  因为$\mathbf l^\intercal \mathbf x = \mathbf x^\intercal \mathrm C \mathbf x = 0$, 所以直线$\mathbf l = \mathrm C \mathbf x$过$\mathbf x$. 如果$\mathbf l$仅与二次曲线交于一点，那么它就是切线，我们的证明也就完成了. 否则，假定$\mathbf l$与该二次曲线还交于另一点$\mathbf y$，则有$\mathbf y^\intercal \mathrm C \mathbf y = 0$和$\mathbf x^\intercal \mathrm C \mathbf y =\mathbf l^\intercal \mathbf y = 0$. 由此推出$(x+\alpha y)^\intercal \mathrm C (x+\alpha y)=0$对所有$\alpha$成立，这表明连接$\mathbf x$和$\mathbf y$的整条直线$\mathbf l = \mathrm C \mathbf x$在该二次曲线$\mathrm C$上，因而C是退化的（见下文）.
 
 #### 对偶二次曲线
 
-上面定义的二次曲线$\mathrm C$更确切地应称为**点**二次曲线，因为它定义的是点的方程. 给出了$\mathbb P^2$的对偶结论2.6以后，理所当然应该有一个由直线的方程定义的二次曲线. 这种**对偶**（或线）二次曲线也由一个$3 \times 3$矩阵表示，我们把它记为$\mathrm C^\*$. 二次曲线$\mathrm C$的切线$\mathbf l$满$\mathbf l^\intercal \mathrm C^\* \mathbf l = 0$. 其中$\mathrm C^\*$表示$\mathrm C$的伴随矩阵（伴随矩阵在附录3(p404)的节A3.2(p406)中定义）. 对非奇异对称矩阵$\mathrm C$有$\mathrm C^\* = \mathrm C^{-1}$(相差一个尺度因子）.
+上面定义的二次曲线$\mathrm C$更确切地应称为**点**二次曲线，因为它定义的是点的方程. 给出了$\mathbb P^2$的对偶结论2.6以后，理所当然应该有一个由直线的方程定义的二次曲线. 这种**对偶**（或线）二次曲线也由一个$3 \times 3$矩阵表示，我们把它记为$\mathrm C^\*$. 二次曲线$\mathrm C$的切线$\mathbf l$满$\mathbf l^\intercal \mathrm C^\* \mathbf l = 0$. 其中$\mathrm C^\*$表示$\mathrm C$的伴随矩阵（伴随矩阵在附录4(p578[p404])的节A4.2(p580[406])中定义）. 对非奇异对称矩阵$\mathrm C$有$\mathrm C^\* = \mathrm C^{-1}$(相差一个尺度因子）.
 
 当$\mathrm C$为满秩时，对偶二次曲线方程可直接推导：根据结论2.7, 过$\mathrm C$上点$\mathbf x$的切线是$\mathbf l = \mathrm C \mathbf x$. 反之，直线$\mathbf l$切于$\mathrm C$的点$\mathbf x$是$\mathbf x = \mathrm C^{-1}\mathbf l$. 因为$\mathbf x$满足$\mathbf x^\intercal \mathrm C \mathbf x = 0$, 我们得到，$(\mathrm C^{-1}\mathbf l)^\intercal \mathrm C (\mathrm C^{-1}\mathbf l)=\mathbf l^\intercal \mathrm C^{-1}\mathbf l=0$, 因为$\mathrm C$是对称的，所以$\mathrm C^{-\intercal} = \mathrm C^{-1}$, 因而得到最后的结果.
 
@@ -168,7 +168,7 @@ tags: [多视角几何第二版,翻译,计算机视觉]
 
 非满秩矩阵$\mathrm C$所定义的二次曲线称作退化二次曲线. 退化的点二次曲线包含两条线（秩2）或一条重线（秩1).
 
-**例2.8**  二次曲线$$\mathrm C = \mathbf l \mathbf m^\intercal + \mathbf m \mathbf l^\intercal$$由$\mathbf I$和$\mathbf m$两线组成. $\mathbf l$上的点满足$\mathbf l^\intercal \mathbf x = 0$, 因而在二次曲线上，因为$\mathbf x^\intercal \mathrm C \mathbf x=(\mathbf x^\intercal \mathbf l)(\mathbf m^\intercal \mathbf x)+(\mathbf x^\intercal \mathbf m)(\mathbf l^\intercal \mathbf x)=0$. 类似地，满足$\mathbf m^\intercal \mathbf x=0$的点同样满足$\mathbf x^\intercal \mathrm C \mathbf x = 0$. 矩阵$\mathrm C$是秩为2的对称矩阵，它的零矢量为$\mathbf x = \mathbf l \times \mathbf m$，它是$\mathbf l$和$\mathbf m$的交点.
+**例2.8**  二次曲线$$\mathrm C = \mathbf l \mathbf m^\intercal + \mathbf m \mathbf l^\intercal$$由$\mathbf l$和$\mathbf m$两线组成. $\mathbf l$上的点满足$\mathbf l^\intercal \mathbf x = 0$, 因而在二次曲线上，因为$\mathbf x^\intercal \mathrm C \mathbf x=(\mathbf x^\intercal \mathbf l)(\mathbf m^\intercal \mathbf x)+(\mathbf x^\intercal \mathbf m)(\mathbf l^\intercal \mathbf x)=0$. 类似地，满足$\mathbf m^\intercal \mathbf x=0$的点同样满足$\mathbf x^\intercal \mathrm C \mathbf x = 0$. 矩阵$\mathrm C$是秩为2的对称矩阵，它的零矢量为$\mathbf x = \mathbf l \times \mathbf m$，它是$\mathbf l$和$\mathbf m$的交点.
 
 退化的**线**二次曲线包含两个点（秩2)，或一个重点（秩1). 例如，线二次曲线$\mathrm C^\* = \mathbf x \mathbf y^\intercal + \mathbf y \mathbf x^\intercal$的秩为2并由一切过点$\mathbf x$或$\mathbf y$的直线组成. 注意对非可逆矩阵而言, $(\mathrm C^\*)^\* \neq \mathrm C$.
 
@@ -210,7 +210,7 @@ Felix Klein在其名著：“Erlangen Program”[Klein-39]中提出：几何研�
 
 图1.3中给出怎样应用定理2.10的一个例子. 沿过一个公共点（投影中心）的射线的投影定义了从一张平面到另一张平面的映射. 显然这种点到点的映射保持直线不变，其中一张平面上的直线被映射到另一张平面上的直线. 如果在每一张平面上建立坐标系并且采用齐次坐标来表示点，那么**中心投影**映射可以表示成$\mathbf x' = \mathrm H \mathbf x$, 其中$\mathrm H$是$3\times3$非奇异矩阵. 实际上，如果在两平面上建立的都是欧氏（直角）坐标系，那么这样一种由中心投影定义的映射比一般射影变换有更多的约束. 我们称它为**透视映射**而不是完全的射影映射，它可由一个六自由度的变换来表示. 我们将在节A5.4(p430)中再回过来讨论透视映射.
 
-**例2.12  消除平面透视图像的射彩失真.**
+**例2.12  消除平面透视图像的射影失真.**
 
 ![image-2.4](/assets/blogImg/2.4.png)
 
@@ -306,9 +306,7 @@ $PL(3)$的重要子群包括**仿射群**和**欧氏群**，仿射群是由$PL(3
 
 #### 度量结构
 
-讨论重构(第9章)时常用的一个术语是**度量**. 所谓**度量结构**就是确定到只相差
-
-一个相似变换的结构.
+讨论重构(第9章)时常用的一个术语是**度量**. 所谓**度量结构**就是确定到只相差一个相似变换的结构.
 
 ### 2.4.3 类III:  仿射变换
 

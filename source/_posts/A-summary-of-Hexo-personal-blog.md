@@ -93,17 +93,29 @@ $ hexo s
 ``` bash
 $ hexo d 
 ```
-对整个流程较为熟悉后：
+
+
+---
+
+
+## 五、一些坑
+
+### 微信分享异常
+主文件夹下yml把url设置正确，再使用//api.qrserver.com/v1/create-qr-code/?size=150x150&data= 或者 http://qr.liantu.com/api.php?text= 修改themes\yilia\layout\\_partial\post\share.ejs即可。注意post中的md文档命名只能是英文，而且不能有空格等特殊字符。
+
+### 对整个流程较为熟悉后：
 * <mark>备份与恢复</mark>——参考下面第三条链接
 * <mark>使用SSH连接Github</mark>——参考第四条链接
 * <mark>添加Valine评论系统</mark>——参考第五条链接
 * <mark>给文章增加目录(博客增加相册功能也可参考该博主的文章)</mark>——参考第六条链接
 * <mark>Hexo与Mathjax的冲突及解决方案</mark>——参考第七条链接
 * <mark>关于备份其他主题到远程仓库是灰色文件夹的解决办法</mark>——参考第八条链接
+
+
 ---
 
 
-## 五、参考内容
+## 六、参考内容
 
 1. https://www.bilibili.com/video/av44544186
 2. http://dongshuyan.com/2016/04/07/%E6%80%8E%E4%B9%88%E5%86%99%E5%8D%9A%E5%AE%A2/
