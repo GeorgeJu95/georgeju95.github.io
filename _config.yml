@@ -4,7 +4,7 @@
 
 # Site
 title: Levi的博客
-subtitle: 可怕的不是难度问题，而是犹豫不决和怀疑自己。
+subtitle: Nothing replaces hard work
 description: 材料狗转行CV学习中
 author: Levi Liu
 email: 980998863@qq.com
@@ -36,7 +36,7 @@ post_asset_folder: false
 relative_link: false
 highlight:                                                                                                                                                                                                   
   enable: true                                                                                                                                                                                               
-  auto_detect: true                                                                                                                                                                                          
+  auto_detect: false                                                                                                                                                                                          
   line_number: true                                                                                                                                                                                          
   tab_replace: ''
 

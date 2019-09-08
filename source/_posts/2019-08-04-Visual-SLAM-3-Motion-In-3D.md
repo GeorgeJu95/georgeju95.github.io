@@ -1,7 +1,7 @@
 ---
 title: 视觉SLAM第三讲——三维空间刚体运动
 date: 2019-08-04 14:30:00
-categories: 读书笔记
+categories: 
 toc: true
 tags: [视觉SLAM十四讲]
 

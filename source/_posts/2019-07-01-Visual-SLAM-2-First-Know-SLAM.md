@@ -1,7 +1,7 @@
 ---
-title: 视觉SLAM第三讲——初识SLAM
+title: 视觉SLAM第二讲——初识SLAM
 date: 2019-07-01 14:30:00
-categories: 读书笔记
+categories: 
 toc: true
 tags: [视觉SLAM十四讲]
 
