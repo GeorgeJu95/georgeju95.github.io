@@ -20,6 +20,7 @@ cd rjsupplicant
 <!-- more -->
 # 新系统首先要做的事情
 
+* Ubuntu16 自带的python 2.7和3.5没有pyvenv等包，最好是安装稳定的python最新版，并且设置python3指向python 3.7 参考[Python3.7.5](https://segmentfault.com/a/1190000018264955?utm_source=tag-newest)
 * 如果有发现自己的**屏幕分辨率**不对劲（有黑边），一般不是驱动出了问题。在设置里面找找分辨率换一下，如果可选择的分辨率很少，可以参考 [这篇文章](https://blog.csdn.net/ignoreyou/article/details/79488442) 设置好自己电脑最适合的分别率。
 * 安装好**Chrome**、**搜狗输入法**和**Vim**，我主要是参考这篇 [18.04](https://blog.csdn.net/haeasringnar/article/details/81809040)也可以参考这篇 [16.04](https://blog.csdn.net/skange/article/details/81127575)，关于**vim**的配置主要参考第二篇。**护眼产品**（包括f.lux、redshift和okular）参考 [redshift和okular](https://blog.csdn.net/u011092188/article/details/59169205) 和 [f.lux](https://blog.csdn.net/gatieme/article/details/62922164)。**下载工具**参考 [uget](https://cnblogs.com/reaptomorrow-flydream/p/9526454.html)。
 
@@ -61,6 +62,46 @@ cd rjsupplicant
 
   # 把bash默认设置为zsh
   chsh -s /bin/zsh （重启生效）
+  ```
+
+* 博客搬到新电脑
+  ```sh
+  # 克隆仓库到本地
+  git clone https://github.com/GeorgeJu95/georgeju95.github.io
+  # 安装 hexo 并初始化
+  sudo npm install -g hexo-cli
+  sudo npm install –no-bin-links  (这一步一定要在项目目录下)
+  sudo npm install hexo-deployer-git
+  ```
+
+* LeetCode项目搬运到新电脑
+  ```sh
+  # 安装chrome 和 chromedriver
+  # https://chromedriver.storage.googleapis.com/index.html 下载对应chrome版本的chromedriver，之后依次执行
+  
+  git clone https://github.com/bonfy/leetcode
+  sudo apt-get install xvfb
+  sudo chmod +x chromedriver
+  sudo mv -f chromedriver /usr/local/share/chromedriver
+  sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+  sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
+
+  # 之后 参考 https://github.com/bonfy/leetcode 说明文档里的步骤
+  sudo apt-get install python3-pip   (如果pip3没有安装的话)
+  # 升级 pip3
+  pip3 install --upgrade pip 
+  # 有可能升级 pip 后出现问题，参考下面文章方法2 
+  # https://blog.csdn.net/zong596568821xp/article/details/80410416
+  sudo pip3 install requests selenium pyquery
+  # 使用 python 虚拟环境 https://blog.csdn.net/qq455013140/article/details/79413414
+  sudo pip3 install virtualenv 
+  # 在当前目录生成venv文件夹
+  virtualenv venv
+  # 激活虚拟环境
+  source venv/bin/activate
+  pip3 install -r req.txt
+  # 退出虚拟环境
+  deactivate
   ```
 
 # 开始干活
