@@ -20,7 +20,8 @@ cd rjsupplicant
 <!-- more -->
 # 新系统首先要做的事情
 
-* Ubuntu16 自带的python 2.7和3.5没有pyvenv等包，最好是安装稳定的python最新版，并且设置python3指向python 3.7 参考[Python3.7.5](https://segmentfault.com/a/1190000018264955?utm_source=tag-newest)
+* Ubuntu16 自带的python 2.7和3.5没有pyvenv等包，最好是安装稳定的python最新版，并且设置python3指向python 3.7 参考[包管理Python3.6](https://www.cnblogs.com/yjlch1016/p/8641910.html)或者[源码Python3.7.5](https://segmentfault.com/a/1190000018264955?utm_source=tag-newest)。升级3.6后可能出现用图像化界面打不开终端的问题，参见[终端问题](https://www.cnblogs.com/anno-ymy/p/11362040.html)
+* 安装jdk11.0.5稳定版，见[JDK 11.0.5](https://blog.csdn.net/weixin_37619439/article/details/88092089)
 * 如果有发现自己的**屏幕分辨率**不对劲（有黑边），一般不是驱动出了问题。在设置里面找找分辨率换一下，如果可选择的分辨率很少，可以参考 [这篇文章](https://blog.csdn.net/ignoreyou/article/details/79488442) 设置好自己电脑最适合的分别率。
 * 安装好**Chrome**、**搜狗输入法**和**Vim**，我主要是参考这篇 [18.04](https://blog.csdn.net/haeasringnar/article/details/81809040)也可以参考这篇 [16.04](https://blog.csdn.net/skange/article/details/81127575)，关于**vim**的配置主要参考第二篇。**护眼产品**（包括f.lux、redshift和okular）参考 [redshift和okular](https://blog.csdn.net/u011092188/article/details/59169205) 和 [f.lux](https://blog.csdn.net/gatieme/article/details/62922164)。**下载工具**参考 [uget](https://cnblogs.com/reaptomorrow-flydream/p/9526454.html)。
 
@@ -88,18 +89,16 @@ cd rjsupplicant
 
   # 之后 参考 https://github.com/bonfy/leetcode 说明文档里的步骤
   sudo apt-get install python3-pip   (如果pip3没有安装的话)
-  # 升级 pip3
-  pip3 install --upgrade pip 
-  # 有可能升级 pip 后出现问题，参考下面文章方法2 
+  # 最好不要升级 pip3 install --upgrade pip，有可能升级 pip 后出现问题，参考下面文章 
   # https://blog.csdn.net/zong596568821xp/article/details/80410416
-  sudo pip3 install requests selenium pyquery
-  # 使用 python 虚拟环境 https://blog.csdn.net/qq455013140/article/details/79413414
-  sudo pip3 install virtualenv 
+  # 使用 python 虚拟环境 
+  sudo apt-get install python3.6-venv
   # 在当前目录生成venv文件夹
-  virtualenv venv
+  python3 -m venv venv
   # 激活虚拟环境
   source venv/bin/activate
   pip3 install -r req.txt
+  python leetcode_generate.py   (此时python已经按前面设置默认指向python3.6了)
   # 退出虚拟环境
   deactivate
   ```
