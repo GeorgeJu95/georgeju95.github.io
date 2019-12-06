@@ -21,8 +21,13 @@ cd rjsupplicant
 # 新系统首先要做的事情
 
 * Ubuntu16 自带的python 2.7和3.5没有pyvenv等包，最好是安装稳定的python最新版，并且设置python3指向python 3.7 参考[包管理Python3.6](https://www.cnblogs.com/yjlch1016/p/8641910.html)或者[源码Python3.7.5](https://segmentfault.com/a/1190000018264955?utm_source=tag-newest)。升级3.6后可能出现用图像化界面打不开终端的问题，参见[终端问题](https://www.cnblogs.com/anno-ymy/p/11362040.html)
+
 * 安装jdk11.0.5稳定版，见[JDK 11.0.5](https://blog.csdn.net/weixin_37619439/article/details/88092089)
+
+* 安装 Skype ： wget https://repo.skype.com/latest/skypeforlinux-64.deb && sudo dpkg -i skypeforlinux-64.deb
+
 * 如果有发现自己的**屏幕分辨率**不对劲（有黑边），一般不是驱动出了问题。在设置里面找找分辨率换一下，如果可选择的分辨率很少，可以参考 [这篇文章](https://blog.csdn.net/ignoreyou/article/details/79488442) 设置好自己电脑最适合的分别率。
+
 * 安装好**Chrome**、**搜狗输入法**和**Vim**，我主要是参考这篇 [18.04](https://blog.csdn.net/haeasringnar/article/details/81809040)也可以参考这篇 [16.04](https://blog.csdn.net/skange/article/details/81127575)，关于**vim**的配置主要参考第二篇。**护眼产品**（包括f.lux、redshift和okular）参考 [redshift和okular](https://blog.csdn.net/u011092188/article/details/59169205) 和 [f.lux](https://blog.csdn.net/gatieme/article/details/62922164)。**微信**安装了[优麒麟](http://www.ubuntukylin.com/applications/24-cn.html)上的客户端，但和网页版一样显示此号不能登录网页版。**QQ**参考[Appimage](https://sourceforge.net/projects/wine-qq-tim/)，然后分别执行 chmod a+x *.AppImage ; ./*.AppImage (出现双击无反应情况。。)或者安装 [wineQQ2012](https://blog.csdn.net/lzp_k2/article/details/94333704)，需要安装[wine](https://blog.csdn.net/u013350783/article/details/90742468)。
 
 * Chrome需要同步，需要科学上网，请参考[方法2](https://github.com/Turing2333/Detailed-tutorial-on-the-building-and-usage-of-SSR/blob/master/Instructions/Clients%20manual%20for%20each%20platform/Linux%20SSR%E7%9B%B8%E5%85%B3%E8%AF%B4%E6%98%8E.txt)。如果执行sudo npm install -g ssr-helper时报GERT_UNTRUSTED错误，这是因为ssl出了问题，执行**npm config set strict-ssl false**。此时的node版本可能较低，安装 **n** 升级node，分别执行 **sudo npm install n -g** 和 **sudo n stable**。关于账号获取，在github搜索**new pac**也许你会有新发现...
@@ -85,7 +90,7 @@ cd rjsupplicant
   [leetcode]
 
   username = LeviLiu
-  password = jszmzx548934
+  password = xxxxxxx
   language = cpp,python,python3,java,javascript
   repo = https://github.com/GeorgeJu95/LeetCode_algorithm
   driverpath = /usr/local/bin/chromedriver

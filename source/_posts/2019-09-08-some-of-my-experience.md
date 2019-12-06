@@ -1,8 +1,7 @@
 ---
 title: 学习过程中的一些感想
 date: 2019-09-08 19:40:36
-categories: 感想
-tags: [一些感想]
+tags: [感想]
 ---
 
 # 用MarkDown记笔记要注意以下几点：

@@ -32,7 +32,6 @@ $ hexo init
 $ hexo s
 ```
 
-
 ---
 
 
@@ -72,7 +71,6 @@ $ hexo d
 ```
 输入github账号和密码。推成功后刷新github仓库发现有所变化，此时可以访问username.github.io
 
-
 ---
 
 
@@ -94,7 +92,6 @@ $ hexo s
 $ hexo d 
 ```
 
-
 ---
 
 
@@ -105,12 +102,12 @@ $ hexo d
 
 ### 对整个流程较为熟悉后：
 * <mark>备份与恢复</mark>——参考下面第三条链接
-* <mark>使用SSH连接Github</mark>——参考第四条链接
-* <mark>添加Valine评论系统</mark>——参考第五条链接
-* <mark>给文章增加目录(博客增加相册功能也可参考该博主的文章)</mark>——参考第六条链接
+* 使用<mark>SSH连接Github</mark>——参考第四条链接
+* 添加<mark>Valine评论系统</mark>——参考第五条链接
+* <mark>给文章增加目录</mark>(博客增加相册功能也可参考该博主的文章)——参考第六条链接
 * <mark>Hexo与Mathjax的冲突及解决方案</mark>——参考第七条链接
 * <mark>关于备份其他主题到远程仓库是灰色文件夹的解决办法</mark>——参考第八条链接
-
+* 使用<mark> yilia-plus </mark>后仍想使用<mark> Valine 评论系统 </mark>——参考第九条链接
 
 ---
 
@@ -125,6 +122,7 @@ $ hexo d
 6. http://lawlite.me/2017/04/17/Hexo-yilia%E4%B8%BB%E9%A2%98%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95%E5%92%8C%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91/
 7. https://segmentfault.com/a/1190000007261752
 8. https://swibinchter.github.io/2017/01/11/Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E6%96%87%E4%BB%B6%E5%A4%B9%E6%97%A0%E6%B3%95%E5%AE%8C%E6%95%B4push%E5%8F%8Aclone/
+9. https://blog.csdn.net/weixin_44330881/article/details/102819061
 
 
 
