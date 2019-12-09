@@ -3,7 +3,10 @@
 menu:
   主页: /
   相册: /photos
-  感想: /tags/一些感想
+  感想: /tags/感想
+  Java: /tags/Java
+  Python: /tags/Python
+  Linux: /tags/Linux
 
 # SubNav
 subnav:
@@ -14,9 +17,9 @@ subnav:
   #zhihu: "#"
   #douban: "#"
   #segmentfault: "#"
-  bilibili: "https://space.bilibili.com/2545473/favlist"
+  #bilibili: "https://space.bilibili.com/2545473/favlist"
   #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
+  mail: "mailto:980998863@qq.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
@@ -131,7 +134,8 @@ friends:
   CodeSheep的B站: https://space.bilibili.com/384068749/
   Github Trending: https://github.com/trending
   菜鸟教程: https://www.runoob.com/  
-  # 友情链接5: http://localhost:4000/
-  # 友情链接6: http://localhost:4000/
+  Rocky1ee: https://rocky1ee.github.io/
+  自学路漫漫: https://blog.fxcdev.com/
+  Truthub: http://truthub.com
 
 aboutme: Levi，<br>17年本科毕业于湘大。<br><br>热爱怀旧J-pop与民谣音乐，<br/>目前华南农计算机研究生在读。

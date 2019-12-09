@@ -4,8 +4,8 @@
 
 # Site
 title: Levi的博客
-subtitle: Nothing replaces hard work
-description: 材料狗转行CV学习中
+subtitle: 
+description: The answer is blowing in the wind
 author: Levi Liu
 email: 980998863@qq.com
 keywords: "程序猿,极客"
@@ -85,7 +85,7 @@ disqus_shortname:
 #  - hexo-generator-baidu-sitemap
 #  - hexo-generator-sitemap
 
-theme: yilia-plus
+theme: yilia
 exclude_generator:
 
 # Deployment
