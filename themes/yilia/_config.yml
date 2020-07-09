@@ -3,10 +3,7 @@
 menu:
   主页: /
   相册: /photos
-  感想: /tags/感想
-  Java: /tags/Java
-  Python: /tags/Python
-  Linux: /tags/Linux
+  归档: /archives
 
 # SubNav
 subnav:
@@ -129,13 +126,9 @@ smart_menu:
 
 friends:
   V2EX: https://www.v2ex.com/?r=LeviLiu
-  爱可可-爱生活的微博: https://weibo.com/fly51fly
-  爱可可-爱生活的B站: https://space.bilibili.com/23852932
-  CodeSheep的B站: https://space.bilibili.com/384068749/
-  Github Trending: https://github.com/trending
-  菜鸟教程: https://www.runoob.com/  
+  Github Trending: https://github.com/trending  
   Rocky1ee: https://rocky1ee.github.io/
-  自学路漫漫: https://blog.fxcdev.com/
   Truthub: http://truthub.com
+  我的书单: https://www.notion.so/c1a5c7864699409aae150e34fc759d8d?v=8b0515f4e216404989f98a0f0765af40
 
 aboutme: Levi，<br>17年本科毕业于湘大。<br><br>热爱怀旧J-pop与民谣音乐，<br/>目前华南农计算机研究生在读。
