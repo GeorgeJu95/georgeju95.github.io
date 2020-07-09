@@ -1,12 +1,12 @@
 ---
-title: Java：字节流 & 递归
+title: Java：其他流 & 属性集
 date: 2020-03-03 20:20:36
 categories: 
 toc: true
 tags: [Java]
 ---
 
-###序列流（了解）
+### 序列流（了解）
 
 * 1.什么是序列流
 	* 序列流可以把多个字节输入流整合成一个, 从序列流中读取数据时, 将从被整合的第一个流开始读, 读完一个之后继续读第二个, 以此类推.
@@ -98,8 +98,8 @@ tags: [Java]
 			fos.close();
 		}
 	}
-```
-	###内存输出流（掌握）
+	```
+### 内存输出流（掌握）
 * 1.什么是内存输出流
 	
 	* 该输出流可以向内存中写数据, 把内存当作一个缓冲区, 写出之后可以一次性获取出所有数据
@@ -161,7 +161,9 @@ tags: [Java]
 		}
 	}
 	```
-###内存输出流之面试题（掌握）
+
+### 内存输出流之面试题（掌握）
+
 * 定义一个文件输入流,调用read(byte[] b)方法,将a.txt文件中的内容打印出来(byte数组大小限制为5)
 
     ```java
@@ -206,7 +208,8 @@ tags: [Java]
     	}
     }
     ```
-###随机访问流概述和读写数据（了解）
+
+### 随机访问流概述和读写数据（了解）
 * A:随机访问流概述
 	* RandomAccessFile概述
 	* RandomAccessFile类不属于流，是Object类的子类。但它融合了InputStream和OutputStream的功能。
@@ -238,7 +241,8 @@ tags: [Java]
 		}
 	}
 	```
-###对象操作流 ObjecOutputStream（了解）
+
+### 对象操作流 ObjecOutputStream（了解）
 * 1.什么是对象操作流
 	
 	* 该流可以将一个对象写出, 或者读取一个对象到程序中. 也就是执行了序列化和反序列化的操作.
@@ -335,7 +339,8 @@ tags: [Java]
 		}
 	}
 	```
-###对象操作流 ObjectInputStream
+
+### 对象操作流 ObjectInputStream
 * 读取: new ObjectInputStream(InputStream), readObject()
 
 ```java
@@ -351,7 +356,7 @@ import com.heima.bean.Person;
 
 public class Demo04_ObjectInputStream {
 
-	/**
+    /**
 	 * @param args
 	 * @throws IOException 
 	 * @throws FileNotFoundException 
@@ -370,7 +375,7 @@ public class Demo04_ObjectInputStream {
 		
 		ois.close();
 	}
-
+	
 	public static void demo1() throws IOException, FileNotFoundException,
 			ClassNotFoundException {
 		ObjectInputStream ois = new ObjectInputStream(new FileInputStream("e.txt"));
@@ -387,7 +392,7 @@ public class Demo04_ObjectInputStream {
 }
 ```
 
-###数据输入输出流（了解）
+### 数据输入输出流（了解）
 * 1.什么是数据输入输出流
 	
 	* DataInputStream, DataOutputStream可以按照基本数据类型大小读写数据
@@ -462,7 +467,7 @@ public class Demo04_ObjectInputStream {
     }
     ```
 
-###打印流的概述和特点（掌握）
+### 打印流的概述和特点（掌握）
 * 1.什么是打印流
 	
 	* 该流可以很方便的将对象的toString()结果输出, 并且自动加上换行, 而且可以使用自动刷出的模式
@@ -519,7 +524,7 @@ public class Demo04_ObjectInputStream {
 	}
 	```
 
-###标准输入输出流概述和输出语句
+### 标准输入输出流概述和输出语句
 * 1.什么是标准输入输出流(掌握)
 	* System.in是InputStream, 标准输入流, 默认可以从键盘输入读取字节数据
 	* System.out是PrintStream, 标准输出流, 默认可以向Console中输出字符和字节数据
@@ -574,7 +579,7 @@ public class Demo04_ObjectInputStream {
 	}
 	```
 
-###修改标准输入输出流拷贝图片（了解）
+### 修改标准输入输出流拷贝图片（了解）
 
 ```java
 package com.heima.test;
@@ -611,7 +616,7 @@ public class Test2 {
 }
 ```
 
-###两种方式实现键盘录入（了解）
+### 两种方式实现键盘录入（了解）
 * A:BufferedReader的readLine方法。
 	* BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 * B:Scanner
@@ -645,7 +650,7 @@ public class Demo07_SystemIn {
 ```
 
 
-###Properties的概述和作为Map集合的使用（了解）
+### Properties的概述和作为Map集合的使用（了解）
 * A:Properties的概述
 	* Properties 类表示了一个持久的属性集。
 	* Properties 可保存在流中或从流中加载。
@@ -654,7 +659,7 @@ public class Demo07_SystemIn {
 	* Properties作为Map集合的使用
 	
 
-###Properties的特殊功能使用（了解）
+### Properties的特殊功能使用（了解）
 * A:Properties的特殊功能
 	* public Object setProperty(String key,String value)
 	* public String getProperty(String key)
@@ -712,7 +717,7 @@ public class Demo07_SystemIn {
 		}
 	}
 	```
-###Properties的load()和store()功能（了解）
+### Properties的load()和store()功能（了解）
 * A:Properties的load()和store()功能
 
 * B:案例演示

@@ -6,7 +6,8 @@ toc: true
 tags: [Java]
 ---
 
-###网络编程概述
+### 网络编程概述
+
 * A:计算机网络
 	* 是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统。
 * B:网络编程
@@ -14,8 +15,8 @@ tags: [Java]
 
 <!-- more -->
 
+### 网络编程三要素之IP概述
 
-###网络编程三要素之IP概述
 * 每个设备在网络中的唯一标识
 * 每台网络终端在网络中都有一个独立的地址，我们在网络中传输数据就是使用这个地址。 
 * ipconfig：查看本机IP192.168.12.42
@@ -29,7 +30,8 @@ tags: [Java]
 * 1a2b:0000:aaaa::0000:aabb:1f2f
 * 1a2b:0000:aaaa:0000::aabb:1f2f
 
-###网络编程三要素之端口号概述
+### 网络编程三要素之端口号概述
+
 * 每个程序在设备上的唯一标识
 * 每个网络程序都需要绑定一个端口号，传输数据的时候除了确定发到哪台机器上，还要明确发到哪个程序。
 * 端口号范围从0-65535
@@ -42,7 +44,8 @@ tags: [Java]
 	* QQ: 4000
 	* feiQ: 2425
 
-###网络编程三要素协议
+### 网络编程三要素协议
+
 * 为计算机网络中进行数据交换而建立的规则、标准或约定的集合。
 * UDP
 	* 面向无连接，数据不安全，速度快。不区分客户端与服务端。
@@ -50,8 +53,8 @@ tags: [Java]
 　　* 面向连接（三次握手），数据安全，速度略低。分为客户端和服务端。
 	* 三次握手: 客户端先向服务端发起请求, 服务端响应请求, 传输数据
 
+### Socket通信原理图解
 
-###Socket通信原理图解
 * A:Socket套接字概述：
 	* 网络上具有唯一标识的IP地址和端口号组合在一起才能构成唯一能识别的标识符套接字。
 	* 通信的两端都有Socket。
@@ -59,8 +62,10 @@ tags: [Java]
 	* 数据在两个Socket间通过IO流传输。
 	* Socket在应用程序中创建，通过一种绑定机制与驱动程序建立关系，告诉自己所对应的IP和port。
 
-###UDP传输（了解）
+### UDP传输（了解）
+
 * 1.发送Send
+	
 	* 创建DatagramSocket, 随机端口号
 	* 创建DatagramPacket, 指定数据, 长度, 地址, 端口
 	* 使用DatagramSocket发送DatagramPacket
@@ -216,7 +221,8 @@ public class Demo2_Receive {
 }
 ```
 
-###UDP传输多线程
+### UDP传输多线程
+
 * A发送和接收在一个窗口完成
 
 ```java
@@ -289,24 +295,19 @@ class Send extends Thread {
 }
 ```
 
-###UDP聊天图形化界面
+### UDP聊天图形化界面
 
+### UDP聊天发送功能
 
-###UDP聊天发送功能
+### UDP聊天记录功能
 
+### UDP聊天清屏功能
 
-###UDP聊天记录功能
+### UDP聊天震动功能
 
+### UDP聊天快捷键和代码优化)
 
-###UDP聊天清屏功能
-
-
-###UDP聊天震动功能
-
-
-###UDP聊天快捷键和代码优化)
-
-###UDP聊天生成jar文件
+### UDP聊天生成jar文件
 
 ```java
 package com.heima.socket;
@@ -587,8 +588,10 @@ public class Demo4_GUIChat extends Frame {
 }
 ```
 
-###TCP协议（掌握）
+### TCP协议（掌握）
+
 * 1.客户端
+	
 	* 创建Socket连接服务端(指定ip地址,端口号)通过ip地址找对应的服务器
 	* 调用Socket的getInputStream()和getOutputStream()方法获取和服务端相连的IO流
 	* 输入流可以读取服务端输出流写出的数据
@@ -632,6 +635,7 @@ public class Demo4_GUIChat extends Frame {
 	```
 	
 * 2.服务端
+	
 	* 创建ServerSocket(需要指定端口号)
 	* 调用ServerSocket的accept()方法接收一个客户端请求，得到一个Socket
 	* 调用Socket的getInputStream()和getOutputStream()方法获取和客户端相连的IO流
@@ -676,7 +680,8 @@ public class Demo4_GUIChat extends Frame {
 	}
 	```
 
-###TCP协议代码优化
+### TCP协议代码优化
+
 * 客户端
 
 ```java
@@ -787,7 +792,8 @@ public class Demo2_Server {
 }
 ```
 
-###练习
+### 练习
+
 * 客户端向服务器写字符串(键盘录入),服务器(多线程)将字符串反转后写回,客户端再次读取到是反转后的字符串
 ```java
 [Demo2_Client.java]
@@ -870,7 +876,8 @@ public class Test1_Server {
 }
 ```
 
-###练习
+### 练习
+
 * 客户端向服务器上传文件
 
 ```java

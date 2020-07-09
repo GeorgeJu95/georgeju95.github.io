@@ -1,12 +1,13 @@
 ---
-title: Java：异常处理
+title: Java：IO流
 date: 2020-03-01 12:52:36
 categories: 
 toc: true
 tags: [Java]
 ---
 
-###IO流概述及其分类
+### IO流概述及其分类
+
 * 1.概念
 	* IO流用来处理设备之间的数据传输
 	* Java对数据的操作是通过流的方式
@@ -29,7 +30,8 @@ tags: [Java]
 
 <!-- more -->
 
-###FileInputStream
+### FileInputStream
+
 * read()一次读取一个字节
 
    ```java
@@ -87,7 +89,8 @@ tags: [Java]
 
 
 
-###FileOutputStream
+### FileOutputStream
+
 * write()一次写出一个字节
 
    ```java
@@ -124,7 +127,9 @@ tags: [Java]
    	}
    }
    ```
-###拷贝音频
+
+### 拷贝音频
+
 * FileInputStream读取
 
   ```java
@@ -190,13 +195,13 @@ tags: [Java]
   }
   ```
 
+### 字节数组拷贝之available()方法
 
-###字节数组拷贝之available()方法
 * A:案例演示（见上面拷贝音频代码第二种方法）
 	* int read(byte[] b):一次读取一个字节数组
 	* write(byte[] b):一次写出一个字节数组
 	* available()获取读的文件所有的字节个数
-###定义小数组
+### 定义小数组
 * write(byte[] b)
 
 * write(byte[] b, int off, int len)写出有效的字节个数
@@ -267,7 +272,8 @@ tags: [Java]
 	}
 	```
 
-###BufferedInputStream和BufferOutputStream拷贝
+### BufferedInputStream和BufferOutputStream拷贝
+
 * A:缓冲思想
 	* 字节流一次读写一个数组的速度明显比一次读写一个字节的速度快很多，
 	* 这是加入了数组这样的缓冲区效果，java本身在设计的时候，
@@ -304,7 +310,8 @@ tags: [Java]
 	* 定义小数组会略胜一筹,因为读和写操作的是同一个数组
 	* 而Buffered操作的是两个数组
 
-###flush和close方法的区别
+### flush和close方法的区别
+
 * flush()方法
 	
 	* 用来刷新缓冲区的,刷新后可以再次写出 
@@ -363,7 +370,9 @@ tags: [Java]
 		}
 	}
 	```
-###字节流读写中文
+
+### 字节流读写中文
+
 * 字节流读取中文的问题
 	
 	* 字节流在读中文（一个字两个字节）的时候有可能会读到半个中文,造成乱码 
@@ -412,7 +421,8 @@ tags: [Java]
 	}
 	```
 
-###流的标准处理异常代码
+### 流的标准处理异常代码
+
 * try{} finally{}嵌套（1.6版本及其以前）
 
 * try() {} 自动close小括号里面的对象（1.7版本）
@@ -480,7 +490,8 @@ tags: [Java]
 	}
 	```
 
-###图片加密
+### 图片加密
+
 ```java
 package com.heima.test;
 
@@ -513,8 +524,8 @@ public class Test1 {
 }
 ```
 
+### 拷贝文件
 
-###拷贝文件
 * 在控制台录入文件的路径,将文件拷贝到当前项目下
 
   ```java
@@ -578,8 +589,8 @@ public class Test1 {
   }
   ```
 
+### 录入数据拷贝到文件
 
-###录入数据拷贝到文件
 * 将键盘录入的数据拷贝到当前项目下的text.txt文件中,键盘录入数据当遇到quit时就退出
 
   ```java

@@ -6,7 +6,8 @@ toc: true
 tags: [Java]
 ---
 
-###类的加载概述和加载时机
+### 类的加载概述和加载时机
+
 * A:类的加载概述
 	* 当程序要使用某个类时，如果该类还未被加载到内存中，则系统会通过加载，连接，初始化三步来实现对这个类进行初始化。
 	* 加载 
@@ -27,7 +28,8 @@ tags: [Java]
 	* 初始化某个类的子类
 	* 直接使用java.exe命令来运行某个主类
 
-###类加载器的概述和分类
+### 类加载器的概述和分类
+
 * A:类加载器的概述
 	* 负责将.class文件加载到内存中，并为之生成对应的Class对象。虽然我们不需要关心类加载机制，但是了解这个机制我们就能更好的理解程序的运行。
 * B:类加载器的分类
@@ -44,7 +46,8 @@ tags: [Java]
 	* Sysetm ClassLoader 系统类加载器
 		* 负责在JVM启动时加载来自java命令的class文件，以及classpath环境变量所指定的jar包和类路径
 
-###反射概述
+### 反射概述
+
 * A:反射概述
 	* JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；
 	* 对于任意一个对象，都能够调用它的任意一个方法和属性；
@@ -85,7 +88,8 @@ tags: [Java]
 	}
 	```
 
-###Class.forName()读取配置文件举例
+### Class.forName()读取配置文件举例
+
 * 榨汁机(Juicer)榨汁的案例
 * 分别有水果(Fruit)苹果(Apple)香蕉(Banana)桔子(Orange)榨汁(squeeze)
 
@@ -146,8 +150,8 @@ class Juicer {
 com.heima.reflect.Apple
 ```
 
+### 通过反射获取带参构造方法并使用
 
-###通过反射获取带参构造方法并使用
 * Constructor
 	
 	* Class类的newInstance()方法是使用该类无参的构造函数创建对象, 如果一个类没有无参的构造函数, 就不能这样创建了,可以调用Class类的getConstructor(String.class,int.class)方法获取一个指定的构造函数然后再调用Constructor类的newInstance("张三",20)方法创建对象
@@ -250,8 +254,8 @@ com.heima.reflect.Apple
 	}
 	```
 
+### 通过反射获取成员变量并使用
 
-###通过反射获取成员变量并使用
 * Field
 	
 	* Class.getField(String)方法可以获取类中的指定字段(可见的), 如果是私有的可以用getDeclaedField("name")方法获取,通过set(obj, "李四")方法可以设置指定对象上该字段的值, 如果是私有的需要先调用setAccessible(true)设置访问权限,用获取的指定的字段调用get(obj)可以获取指定对象中该字段的值
@@ -288,7 +292,8 @@ com.heima.reflect.Apple
 	}
 	```
 
-###通过反射获取方法并使用
+### 通过反射获取方法并使用
+
 * Method
 	
 	* Class.getMethod(String, Class...) 和 Class.getDeclaredMethod(String, Class...)方法可以获取类中的指定方法,调用invoke(Object, Object...)可以调用该方法,Class.getMethod("eat") invoke(obj) Class.getMethod("eat",int.class) invoke(obj,10)
@@ -324,7 +329,8 @@ com.heima.reflect.Apple
 	}
 	```
 
-###通过反射越过泛型检查
+### 通过反射越过泛型检查
+
 * A:案例演示
 	
 	* ArrayList<Integer>的一个对象，在这个集合中添加一个字符串数据，如何实现呢？
@@ -357,7 +363,8 @@ com.heima.reflect.Apple
 	}
 	```
 
-###通过反射写一个通用的设置某个对象的某个属性为指定的值
+### 通过反射写一个通用的设置某个对象的某个属性为指定的值
+
 * A:案例演示
 	
 	* public void setProperty(Object obj, String propertyName, Object value){}，此方法可将obj对象中名为propertyName的属性的值设置为value。
@@ -432,7 +439,8 @@ com.heima.reflect.Apple
 	}
 	```
 
-###练习
+### 练习
+
 * 已知一个类，定义如下： 
 	 ```java
 	public class DemoClass {
@@ -494,7 +502,8 @@ com.heima.reflect.Apple
 	}
 	```
 
-###动态代理的概述和实现
+### 动态代理的概述和实现
+
 * A:动态代理概述
 	* 代理：本来应该自己做的事情，请了别人来做，被请的人就是代理对象。
 	* 举例：春节回家买票让人代买
@@ -633,8 +642,8 @@ com.heima.reflect.Apple
 	}
 	```
 
+### 模版(Template)设计模式概述和使用
 
-###模版(Template)设计模式概述和使用
 * A:模版设计模式概述
 	
 	* 模版方法模式就是定义一个算法的骨架，而将具体的算法延迟到子类中来实现
@@ -696,7 +705,8 @@ com.heima.reflect.Apple
 5,适配器
 6,模版
 
-###JDK5新特性(自己实现枚举类)
+### JDK5新特性(自己实现枚举类)
+
 * A:枚举概述
 	* 是指将变量的值一一列出来,变量的值只限于列举出来的值的范围内。举例：一周只有7天，一年只有12个月等。
 * B:回想单例设计模式：单例类是一个类只有一个实例
@@ -710,11 +720,12 @@ com.heima.reflect.Apple
 5,增强for循环
 6,互斥锁
 7,枚举
-###JDK5新特性(通过enum实现枚举类)
+### JDK5新特性(通过enum实现枚举类)
 * A:案例演示
 	* 通过enum实现枚举类
 
-###JDK5新特性(枚举的注意事项)
+### JDK5新特性(枚举的注意事项)
+
 * A:案例演示
 	* 定义枚举类要用关键字enum
 	* 所有枚举类都是Enum的子类
@@ -723,7 +734,8 @@ com.heima.reflect.Apple
 	* 枚举类也可以有抽象方法，但是枚举项必须重写该方法
 	* 枚举在switch语句中的使用
 
-###JDK5新特性(枚举类的常见方法)
+### JDK5新特性(枚举类的常见方法)
+
 * A:枚举类的常见方法
 	* int ordinal()
 	* int compareTo(E o)
@@ -803,7 +815,8 @@ com.heima.reflect.Apple
 	}
 	```
 
-###JDK7新特性(六个新特性回顾和讲解)
+### JDK7新特性(六个新特性回顾和讲解)
+
 * A:二进制字面量
 * B:数字字面量可以出现下划线
 * C:switch 语句可以用字符串
@@ -833,7 +846,8 @@ public class Demo1_JDK7 {
 }
 ```
 
-###JDK8新特性
+### JDK8新特性
+
 * 接口中可以定义有方法体的方法,如果是非静态,必须用default修饰	
 * 如果是静态的就不用了
 

@@ -6,7 +6,8 @@ toc: true
 tags: [Java]
 ---
 
-###字符流FileReader
+### 字符流FileReader
+
 * 1.字符流是什么
 	* 字符流是可以直接读写字符的IO流
 	* 字符流读取字符, 就要先读取到字节数据, 然后转为字符. 如果要写出字符, 需要把字符转为字节再写出.    
@@ -53,7 +54,8 @@ tags: [Java]
 	}
 	```
 
-###字符流FileWriter
+### 字符流FileWriter
+
 * FileWriter类的write()方法可以自动把字符转为字节写出
 
 		```java
@@ -77,7 +79,7 @@ tags: [Java]
 	}
 	```
 
-###字符流的拷贝
+### 字符流的拷贝
 
 ```java
 package com.heima.chario;
@@ -155,18 +157,21 @@ public class Demo3_Copy {
 }
 ```
 
-###什么情况下使用字符流
+### 什么情况下使用字符流
+
 * 字符流也可以拷贝文本文件, 但**不推荐使用**. 因为读取时会把字节转为字符, 写出时还要把字符转回字节.
 * 程序需要**读取一段文本**, 或者需要**写出一段文本**的时候可以使用字符流
 * **读取的时候是按照字符的大小读取的,不会出现半个中文**
 * **写出的时候可以直接将字符串写出,不用转换为字节数组**
 
-###字符流是否可以拷贝非纯文本的文件
+### 字符流是否可以拷贝非纯文本的文件
+
 * **不可以拷贝非纯文本的文件**
 * 因为在读的时候会将字节转换为字符,在转换过程中,可能找不到对应的字符,就会用?代替,写出的时候会将字符转换成字节写出去
 * 如果是?,直接写出,这样写出之后的文件就乱了,看不了了 	
 
-###readLine()和newLine()方法
+### readLine()和newLine()方法
+
 * BufferedReader的readLine()方法可以读取一行字符(**不包含换行符号**)
 
 * BufferedWriter的newLine()可以**输出一个跨平台的换行符号"\r\n"**
@@ -223,8 +228,8 @@ public class Demo3_Copy {
   }
   ```
 
+### 将文本反转
 
-###将文本反转
 * 将一个文本文档上的文本反转,第一行和倒数第一行交换,第二行和倒数第二行交换
 
   ```java
@@ -282,7 +287,8 @@ public class Demo3_Copy {
   }
   ```
 
-###LineNumberReader
+### LineNumberReader
+
 * LineNumberReader是BufferedReader的子类, 具有相同的功能, 并且可以统计行号
 	* 调用getLineNumber()方法可以获取当前行号
 	* 调用setLineNumber()方法可以设置当前行号
@@ -315,7 +321,7 @@ public class Demo3_Copy {
 	}
 	```
 
-###装饰设计模式
+### 装饰设计模式
 
 ```java
 package com.heima.chario;
@@ -369,8 +375,8 @@ class HeiMaStudent implements Coder {
 }
 ```
 
+### 使用指定的码表读写字符
 
-###使用指定的码表读写字符
 * FileReader是使用默认码表读取文件, 如果需要使用指定码表读取, 那么可以使用InputStreamReader(字节流, 编码表)，它是字节流通向字符流的桥梁
 
 * FileWriter是使用默认码表写出文件, 如果需要使用指定码表写出, 那么可以使用OutputStreamWriter(字节流, 编码表)，它是字符流通向字节流的桥梁 
@@ -441,11 +447,13 @@ class HeiMaStudent implements Coder {
   	}
   }
   ```
-###转换流图解
+
+### 转换流图解
 
 ![转换流](/assets/blogImg/转换流.png)
 
-###获取文本上字符出现的次数
+### 获取文本上字符出现的次数
+
 * 获取一个文本上每个字符出现的次数,将结果写在times.txt上
 
   ```java
@@ -506,7 +514,8 @@ class HeiMaStudent implements Coder {
   }
   ```
 
-###试用版软件
+### 试用版软件
+
 * 当我们下载一个试用版软件,没有购买正版的时候,每执行一次就会提醒我们还有多少次使用机会用学过的IO流知识,模拟试用版软件,试用10次机会,执行一次就提示一次您还有几次机会,如果次数到了提示请购买正版
 
   ```java
@@ -695,7 +704,8 @@ class HeiMaStudent implements Coder {
   }
   ```
 
-###总结
+### 总结
+
 * 1.会用BufferedReader读取GBK码表和UTF-8码表的字符
 * 2.会用BufferedWriter写出字符到GBK码表和UTF-8码表的文件中
 * 3.会使用BufferedReader从键盘读取一行

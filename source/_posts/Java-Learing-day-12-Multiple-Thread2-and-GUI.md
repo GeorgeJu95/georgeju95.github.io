@@ -6,7 +6,8 @@ toc: true
 tags: [Java]
 ---
 
-###单例设计模式（掌握）
+### 单例设计模式（掌握）
+
 * 单例设计模式：保证类在内存中只有一个对象。
 
 * 如何保证类在内存中只有一个对象呢？
@@ -98,7 +99,8 @@ tags: [Java]
 	}
 	```
 
-###Runtime类
+### Runtime类
+
 * Runtime类是一个单例类
 
 ```java
@@ -120,7 +122,8 @@ public class Demo2_Runtime {
 }
 ```
 
-###多线程(Timer)（掌握）
+### 多线程(Timer)（掌握）
+
 * Timer类:计时器
 
 ```java
@@ -158,8 +161,8 @@ class MyTimerTask extends TimerTask {
 }
 ```
 
+### 两个线程间的通信（掌握）
 
-###两个线程间的通信（掌握）
 * 1.什么时候需要通信
 	
 	* 多个线程并发执行时, 在默认情况下CPU是随机切换线程的
@@ -249,7 +252,8 @@ class MyTimerTask extends TimerTask {
 	}
 	```
 
-###三个或三个以上间的线程通信
+### 三个或三个以上间的线程通信
+
 * 多个线程通信的问题
 	* notify()方法是随机唤醒一个线程
 	* notifyAll()方法是唤醒所有线程
@@ -372,7 +376,9 @@ class MyTimerTask extends TimerTask {
 		}
 	}
 	```
-###JDK1.5的新特性互斥锁（掌握）
+
+### JDK1.5的新特性互斥锁（掌握）
+
 * 1.同步
 	
 	* **使用ReentrantLock类的lock()和unlock()方法进行同步**
@@ -431,8 +437,8 @@ class MyTimerTask extends TimerTask {
 	}
 	```
 
+### 线程组的概述和使用
 
-###线程组的概述和使用
 * A:线程组概述
 	* Java中使用ThreadGroup来表示线程组，它可以对一批线程进行分类管理，Java允许程序直接对线程组进行控制。
 	* 默认情况下，所有的线程都属于主线程组。
@@ -495,14 +501,15 @@ class MyRunnable implements Runnable {
 }
 ```
 
+### 线程的五种状态（掌握）
 
-###线程的五种状态（掌握）
 * 看图说话
 * 新建,就绪,运行,阻塞,死亡
 
 ![线程转换](/assets/blogImg/线程转换图.png)
 
-###线程池的概述和使用（了解）
+### 线程池的概述和使用（了解）
+
 * A:线程池概述
 	
 	* 程序启动一个新线程成本是比较高的，因为它涉及到要与操作系统进行交互。而使用线程池可以很好的提高性能，尤其是当程序中要创建大量生存期很短的线程时，更应该考虑使用线程池。线程池里的每一个线程代码结束后，并不会死亡，而是再次回到线程池中成为空闲状态，等待下一个对象来使用。在JDK5之前，我们必须手动实现自己的线程池，从JDK5开始，Java内置支持线程池
@@ -547,7 +554,8 @@ class MyRunnable implements Runnable {
 		```
 	
 
-###多线程程序实现的方式（了解）
+### 多线程程序实现的方式（了解）
+
 * 提交的是Callable
 
 ```java
@@ -604,8 +612,8 @@ class MyCallable implements Callable<Integer> {
 	* 弊端：
 		* 代码比较复杂，所以一般不用
 
+### 设计模式(简单工厂模式概述和使用)
 
-###设计模式(简单工厂模式概述和使用)
 * A:简单工厂模式概述
 	
 	* 又叫静态工厂方法模式，它定义一个具体的工厂类负责创建一些类的实例
@@ -696,7 +704,9 @@ class MyCallable implements Callable<Integer> {
 		}
 	}
 	```
-###设计模式(工厂方法模式的概述和使用)
+
+### 设计模式(工厂方法模式的概述和使用)
+
 * A:工厂方法模式概述
 	
 	* 工厂方法模式中抽象工厂类负责定义创建对象的接口，具体对象的创建工作由继承抽象工厂的具体类实现。
@@ -719,7 +729,8 @@ class MyCallable implements Callable<Integer> {
 			public Animal createAnimal() {…}
 		        }  
 
-###GUI(如何创建一个窗口并显示) [Java GUI不用太花精力去学]
+### GUI(如何创建一个窗口并显示) [Java GUI不用太花精力去学]
+
 * Graphical User Interface(图形用户接口)。
 * 
 		Frame  f = new Frame(“my window”);
@@ -729,7 +740,8 @@ class MyCallable implements Callable<Integer> {
 		f.setIconImage(Toolkit.getDefaultToolkit().createImage("qq.png"));
 		f.setVisible(true);
 
-###GUI(布局管理器) 
+### GUI(布局管理器) 
+
 * FlowLayout（流式布局管理器）
 	* 从左到右的顺序排列。
 	* Panel默认的布局管理器。
@@ -742,7 +754,7 @@ class MyCallable implements Callable<Integer> {
 	* 选项卡
 * GridBagLayout（网格包布局管理器）
 	* 非规则的矩阵
-###GUI(窗体监听)
+### GUI(窗体监听)
 ```java
 Frame f = new Frame("我的窗体");
 //事件源是窗体,把监听器注册到事件源上
@@ -755,9 +767,9 @@ f.addWindowListener(new WindowAdapter() {
 });
 ```
 
-###GUI(鼠标监听)
-###GUI(键盘监听和键盘事件)
-###GUI(动作监听)
+### GUI(鼠标监听)
+### GUI(键盘监听和键盘事件)
+### GUI(动作监听)
 
 ```java
 package com.heima.gui;
@@ -877,7 +889,8 @@ public class Demo1_Frame {
 }*/
 ```
 
-###设计模式(适配器设计模式)(掌握)
+### 设计模式(适配器设计模式)(掌握)
+
 * a.什么是适配器
 	* 在使用监听器的时候, 需要定义一个类事件监听器接口.
 	* 通常接口中有多个方法, 而程序中不一定所有的都用到, 但又必须重写, 这很繁琐.
@@ -939,7 +952,9 @@ public class Demo1_Frame {
 		}
 	}
 	```
-###GUI(需要知道的) 
+
+### GUI(需要知道的) 
+
 * 事件处理
 	* 事件: 用户的一个操作
 	* 事件源: 被操作的组件
