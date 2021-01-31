@@ -108,6 +108,7 @@ $ hexo d
 * <mark>Hexo与Mathjax的冲突及解决方案</mark>——参考第七条链接
 * <mark>关于备份其他主题到远程仓库是灰色文件夹的解决办法</mark>——参考第八条链接
 * 使用<mark> yilia-plus </mark>后仍想使用<mark> Valine 评论系统 </mark>——参考第九条链接
+* 推送到<mark> Git 仓库配置 SSH</mark>——参考第十条链接
 
 ---
 
@@ -123,6 +124,7 @@ $ hexo d
 7. https://segmentfault.com/a/1190000007261752
 8. https://swibinchter.github.io/2017/01/11/Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E6%96%87%E4%BB%B6%E5%A4%B9%E6%97%A0%E6%B3%95%E5%AE%8C%E6%95%B4push%E5%8F%8Aclone/
 9. https://blog.csdn.net/weixin_44330881/article/details/102819061
+10. https://fzy15116089232.blog.csdn.net/article/details/111537943
 
 
 
